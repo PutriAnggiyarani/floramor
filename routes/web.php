@@ -21,3 +21,11 @@ Route::middleware('guest')->group(function () {
 
 Route::get('/register', [App\Http\Controllers\Auth\AuthController::class, 'index_register'])->name('register');
 Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'register'])->name('auths.register');
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboardAdmin');
+    Route::resource('categories', App\Http\Controllers\CategoryController::class);
+    Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
+});
+
+Route::resource('users', App\Http\Controllers\UserController::class);
