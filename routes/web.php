@@ -25,6 +25,7 @@ Route::post('/register', [App\Http\Controllers\Auth\AuthController::class, 'regi
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboardAdmin');
     Route::resource('categories', App\Http\Controllers\CategoryController::class);
+    Route::resource('products', App\Http\Controllers\ProductController::class);
     Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('auths.logout');
 });
 
