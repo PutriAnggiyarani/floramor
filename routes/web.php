@@ -30,3 +30,5 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 });
 
 Route::resource('users', App\Http\Controllers\UserController::class);
+Route::resource('orders', App\Http\Controllers\OrderController::class);
+
