@@ -51,10 +51,6 @@
                                 <td>{{ $item->username }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-warning" data-toggle="modal"
-                                        data-target="#editUserModal" data-id="{{ $item->id }}">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
                                     <form action="{{ route('users.destroy', $item->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -103,55 +99,6 @@
                                         name="password" required>
                                     <div class="input-group-append">
                                         <span class="input-group-text password-toggle">
-                                            <i class="fa fa-eye-slash"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Modal edit --}}
-    <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST" class="row" id="editForm">
-                        @csrf
-                        @method('PUT')
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control" id="usernameEdit"
-                                    name="username" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="emailEdit"
-                                    name="email" required>
-                            </div>
-                            <div class="form-group password-wrapper">
-                                <label for="password">Password</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="passwordEdit"
-                                        name="password"
-                                        required>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text password-toggle edit">
                                             <i class="fa fa-eye-slash"></i>
                                         </span>
                                     </div>
