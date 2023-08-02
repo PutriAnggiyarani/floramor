@@ -8,8 +8,8 @@
                 My Profile
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{{ route('aboutUs') }}"><i class="fas fa-user"></i> Profile</a></li>
-                <li><a class="dropdown-item" href="{{ route('aboutUs') }}"><i class="fas fa-history"></i> History</a>
+                <li><a class="dropdown-item" href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="{{ route('history') }}"><i class="fas fa-history"></i> History</a>
                 </li>
                 <li><a class="dropdown-item" href="{{ route('auths.logout') }}"><i class="fas fa-sign-out-alt"></i>
                         Logout</a></li>
